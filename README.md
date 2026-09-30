@@ -8,7 +8,7 @@ La extension agrega un menu en la barra superior para aplicar perfiles completos
 - Tema de GNOME Shell.
 - Iconos.
 - Cursor.
-- Wallpaper.
+- Wallpaper estatico.
 - Esquema claro/oscuro.
 - Tema ZSH usado por la configuracion local.
 
@@ -20,8 +20,9 @@ Base funcional usada en la PC local de `guillenec`.
 - Sesion actual probada: Wayland.
 - UUID: `theme-profiles@guillenec.dev`.
 - Carpeta de fondos: `~/.local/share/backgrounds`.
-- Carpeta temporal de videos animados: `~/Imágenes/animados`.
 - Perfiles: `extension/profiles.json`.
+
+El soporte de fondos animados fue descartado. En GNOME Wayland, `mpv` y VLC se abren como ventanas normales encima del escritorio, por lo que no sirven como wallpaper real.
 
 ## Instalacion
 
@@ -29,10 +30,10 @@ Base funcional usada en la PC local de `guillenec`.
 ./install.sh
 ```
 
-El instalador copia la extension, instala el backend animado y habilita el servicio de usuario:
+El instalador copia solo la extension a:
 
 ```text
-theme-profiles-animated-wallpaper.service
+~/.local/share/gnome-shell/extensions/theme-profiles@guillenec.dev
 ```
 
 Si GNOME no recarga la extension automaticamente, cerrar sesion y volver a entrar.
@@ -62,7 +63,6 @@ Cada perfil puede definir:
   "iconTheme": "Tela-dracula-dark",
   "cursorTheme": "Bibata-Modern-Classic",
   "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/fondo.png",
-  "animatedWallpaper": null,
   "colorScheme": "prefer-dark"
 }
 ```
@@ -73,102 +73,10 @@ Despues de editar:
 ./install.sh
 ```
 
-## Estado de fondos animados
-
-La extension ya reconoce la clave opcional `animatedWallpaper` en los perfiles.
-
-Al aplicar un perfil, siempre se aplica primero `wallpaperUri` como fondo estatico normal de GNOME. Luego se escribe el estado del fondo animado en:
-
-```text
-~/.config/theme-profiles/animated-wallpaper.json
-```
-
-Esto permite que un servicio liviano externo lea el estado y active o apague la animacion sin que la extension tenga que reproducir video dentro de GNOME Shell.
-
-Decision tecnica:
-
-- Mantener el selector de temas como extension GNOME.
-- Usar siempre un wallpaper estatico como fallback.
-- Mantener los wallpapers estaticos en `~/.local/share/backgrounds`.
-- Usar `~/Imágenes/animados` para videos de prueba mientras se estabiliza el backend.
-- Evitar Electron y procesos pesados.
-- Priorizar integracion segura con GNOME Wayland.
-
-Ejemplo de perfil con fondo animado:
-
-```json
-{
-  "id": "rainy-night",
-  "name": "Rainy Night",
-  "gtkTheme": "Dracula",
-  "shellTheme": "Dracula",
-  "iconTheme": "Tela-dracula-dark",
-  "cursorTheme": "Bibata-Modern-Classic",
-  "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/rainy-night-fallback.jpg",
-  "animatedWallpaper": "/home/guillenec/Imágenes/animados/rainy-night.mp4",
-  "colorScheme": "prefer-dark"
-}
-```
-
-Ejemplo de estado generado:
-
-```json
-{
-  "enabled": true,
-  "profileId": "rainy-night",
-  "profileName": "Rainy Night",
-  "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/rainy-night-fallback.jpg",
-  "animatedWallpaper": "/home/guillenec/Imágenes/animados/rainy-night.mp4",
-  "updatedAt": "2026-09-30T12:00:00-03:00"
-}
-```
-
-## Backend animado
-
-El backend instalado observa este archivo:
-
-```text
-~/.config/theme-profiles/animated-wallpaper.json
-```
-
-Cuando `enabled` es `true`, intenta reproducir `animatedWallpaper` con `mpv` si esta disponible. Si no hay `mpv`, usa `vlc`.
-
-Comandos utiles:
-
-```bash
-systemctl --user status theme-profiles-animated-wallpaper.service
-systemctl --user restart theme-profiles-animated-wallpaper.service
-systemctl --user stop theme-profiles-animated-wallpaper.service
-```
-
-Ver logs:
-
-```bash
-journalctl --user -u theme-profiles-animated-wallpaper.service -f
-```
-
-Log simple del backend:
-
-```text
-~/.config/theme-profiles/animated-wallpaper-daemon.log
-```
-
-Prueba sin lanzar reproductor:
-
-```bash
-~/.local/lib/theme-profiles/animated-wallpaper-daemon.py --once --dry-run
-```
-
-Nota actual: en GNOME Wayland, VLC puede abrir el video como ventana fullscreen normal en vez de integrarse como fondo real. Esta primera version deja el control de estado, servicio y apagado seguro; la integracion visual fina queda como siguiente etapa.
-
 ## Rutas locales utiles
 
 ```text
 ~/.local/share/gnome-shell/extensions/theme-profiles@guillenec.dev
-~/.local/lib/theme-profiles/animated-wallpaper-daemon.py
-~/.config/systemd/user/theme-profiles-animated-wallpaper.service
 ~/.local/share/backgrounds
-~/Imágenes/animados
 ~/.config/theme-profiles/current-zsh-theme
-~/.config/theme-profiles/animated-wallpaper.json
 ```
