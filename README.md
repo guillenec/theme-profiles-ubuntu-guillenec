@@ -55,6 +55,7 @@ Cada perfil puede definir:
   "iconTheme": "Tela-dracula-dark",
   "cursorTheme": "Bibata-Modern-Classic",
   "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/fondo.png",
+  "animatedWallpaper": null,
   "colorScheme": "prefer-dark"
 }
 ```
@@ -65,19 +66,26 @@ Despues de editar:
 ./install.sh
 ```
 
-## Fondos animados
+## Estado de fondos animados
 
-La siguiente etapa del proyecto sera agregar soporte para fondos animados sin romper los fondos estaticos.
+La extension ya reconoce la clave opcional `animatedWallpaper` en los perfiles.
 
-Decision tecnica inicial:
+Al aplicar un perfil, siempre se aplica primero `wallpaperUri` como fondo estatico normal de GNOME. Luego se escribe el estado del fondo animado en:
+
+```text
+~/.config/theme-profiles/animated-wallpaper.json
+```
+
+Esto permite que un servicio liviano externo lea el estado y active o apague la animacion sin que la extension tenga que reproducir video dentro de GNOME Shell.
+
+Decision tecnica:
 
 - Mantener el selector de temas como extension GNOME.
 - Usar siempre un wallpaper estatico como fallback.
-- Agregar una clave opcional `animatedWallpaper` en los perfiles.
 - Evitar Electron y procesos pesados.
 - Priorizar integracion segura con GNOME Wayland.
 
-Ejemplo futuro:
+Ejemplo de perfil con fondo animado:
 
 ```json
 {
@@ -93,10 +101,24 @@ Ejemplo futuro:
 }
 ```
 
+Ejemplo de estado generado:
+
+```json
+{
+  "enabled": true,
+  "profileId": "rainy-night",
+  "profileName": "Rainy Night",
+  "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/rainy-night-fallback.jpg",
+  "animatedWallpaper": "/home/guillenec/.local/share/backgrounds/rainy-night.mp4",
+  "updatedAt": "2026-09-30T12:00:00-03:00"
+}
+```
+
 ## Rutas locales utiles
 
 ```text
 ~/.local/share/gnome-shell/extensions/theme-profiles@guillenec.dev
 ~/.local/share/backgrounds
 ~/.config/theme-profiles/current-zsh-theme
+~/.config/theme-profiles/animated-wallpaper.json
 ```

@@ -417,6 +417,7 @@ export default class ThemeProfilesExtension extends Extension {
         this._safeSetString(this._backgroundSettings, 'picture-uri-dark', profile.wallpaperUri);
         this._safeSetString(this._userThemeSettings, 'name', profile.shellTheme);
         this._writeCurrentZshTheme(terminalStyle.zshTheme);
+        this._writeAnimatedWallpaperState(profile);
 
         this._indicator?.refresh();
         Main.notify(`Tema aplicado: ${profile.name}`);
@@ -438,6 +439,27 @@ export default class ThemeProfilesExtension extends Extension {
             GLib.file_set_contents(themeFile, `${zshTheme}\n`);
         } catch (error) {
             console.error(`[${this.uuid}] No se pudo guardar zshTheme actual: ${error}`);
+        }
+    }
+
+    _writeAnimatedWallpaperState(profile) {
+        try {
+            const configDir = GLib.build_filenamev([GLib.get_home_dir(), '.config', 'theme-profiles']);
+            GLib.mkdir_with_parents(configDir, 0o755);
+
+            const stateFile = GLib.build_filenamev([configDir, 'animated-wallpaper.json']);
+            const state = {
+                enabled: Boolean(profile.animatedWallpaper),
+                profileId: profile.id,
+                profileName: profile.name,
+                wallpaperUri: profile.wallpaperUri || null,
+                animatedWallpaper: profile.animatedWallpaper || null,
+                updatedAt: GLib.DateTime.new_now_local().format_iso8601(),
+            };
+
+            GLib.file_set_contents(stateFile, `${JSON.stringify(state, null, 2)}\n`);
+        } catch (error) {
+            console.error(`[${this.uuid}] No se pudo guardar el estado de fondo animado: ${error}`);
         }
     }
 
