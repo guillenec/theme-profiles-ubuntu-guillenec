@@ -20,6 +20,7 @@ Base funcional usada en la PC local de `guillenec`.
 - Sesion actual probada: Wayland.
 - UUID: `theme-profiles@guillenec.dev`.
 - Carpeta de fondos: `~/.local/share/backgrounds`.
+- Carpeta temporal de videos animados: `~/Imágenes/animados`.
 - Perfiles: `extension/profiles.json`.
 
 ## Instalacion
@@ -82,6 +83,8 @@ Decision tecnica:
 
 - Mantener el selector de temas como extension GNOME.
 - Usar siempre un wallpaper estatico como fallback.
+- Mantener los wallpapers estaticos en `~/.local/share/backgrounds`.
+- Usar `~/Imágenes/animados` para videos de prueba mientras se estabiliza el backend.
 - Evitar Electron y procesos pesados.
 - Priorizar integracion segura con GNOME Wayland.
 
@@ -96,7 +99,7 @@ Ejemplo de perfil con fondo animado:
   "iconTheme": "Tela-dracula-dark",
   "cursorTheme": "Bibata-Modern-Classic",
   "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/rainy-night-fallback.jpg",
-  "animatedWallpaper": "/home/guillenec/.local/share/backgrounds/rainy-night.mp4",
+  "animatedWallpaper": "/home/guillenec/Imágenes/animados/rainy-night.mp4",
   "colorScheme": "prefer-dark"
 }
 ```
@@ -109,7 +112,7 @@ Ejemplo de estado generado:
   "profileId": "rainy-night",
   "profileName": "Rainy Night",
   "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/rainy-night-fallback.jpg",
-  "animatedWallpaper": "/home/guillenec/.local/share/backgrounds/rainy-night.mp4",
+  "animatedWallpaper": "/home/guillenec/Imágenes/animados/rainy-night.mp4",
   "updatedAt": "2026-09-30T12:00:00-03:00"
 }
 ```
@@ -119,6 +122,7 @@ Ejemplo de estado generado:
 ```text
 ~/.local/share/gnome-shell/extensions/theme-profiles@guillenec.dev
 ~/.local/share/backgrounds
+~/Imágenes/animados
 ~/.config/theme-profiles/current-zsh-theme
 ~/.config/theme-profiles/animated-wallpaper.json
 ```
