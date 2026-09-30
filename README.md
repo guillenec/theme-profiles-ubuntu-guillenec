@@ -29,6 +29,12 @@ Base funcional usada en la PC local de `guillenec`.
 ./install.sh
 ```
 
+El instalador copia la extension, instala el backend animado y habilita el servicio de usuario:
+
+```text
+theme-profiles-animated-wallpaper.service
+```
+
 Si GNOME no recarga la extension automaticamente, cerrar sesion y volver a entrar.
 
 ## Desinstalacion
@@ -117,10 +123,50 @@ Ejemplo de estado generado:
 }
 ```
 
+## Backend animado
+
+El backend instalado observa este archivo:
+
+```text
+~/.config/theme-profiles/animated-wallpaper.json
+```
+
+Cuando `enabled` es `true`, intenta reproducir `animatedWallpaper` con `mpv` si esta disponible. Si no hay `mpv`, usa `vlc`.
+
+Comandos utiles:
+
+```bash
+systemctl --user status theme-profiles-animated-wallpaper.service
+systemctl --user restart theme-profiles-animated-wallpaper.service
+systemctl --user stop theme-profiles-animated-wallpaper.service
+```
+
+Ver logs:
+
+```bash
+journalctl --user -u theme-profiles-animated-wallpaper.service -f
+```
+
+Log simple del backend:
+
+```text
+~/.config/theme-profiles/animated-wallpaper-daemon.log
+```
+
+Prueba sin lanzar reproductor:
+
+```bash
+~/.local/lib/theme-profiles/animated-wallpaper-daemon.py --once --dry-run
+```
+
+Nota actual: en GNOME Wayland, VLC puede abrir el video como ventana fullscreen normal en vez de integrarse como fondo real. Esta primera version deja el control de estado, servicio y apagado seguro; la integracion visual fina queda como siguiente etapa.
+
 ## Rutas locales utiles
 
 ```text
 ~/.local/share/gnome-shell/extensions/theme-profiles@guillenec.dev
+~/.local/lib/theme-profiles/animated-wallpaper-daemon.py
+~/.config/systemd/user/theme-profiles-animated-wallpaper.service
 ~/.local/share/backgrounds
 ~/Imágenes/animados
 ~/.config/theme-profiles/current-zsh-theme
