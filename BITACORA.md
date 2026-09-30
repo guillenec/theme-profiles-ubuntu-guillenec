@@ -301,15 +301,44 @@ Limitacion observada/esperada:
 - En Wayland, VLC puede abrir el video como ventana fullscreen normal.
 - Todavia no esta integrado como fondo real detras del escritorio.
 - El backend ya resuelve estado, servicio, encendido y apagado seguro.
+- En Wayland, `gnome-extensions disable/enable` puede no recargar completamente el codigo/metadata de una extension ya cargada por GNOME Shell. Si el selector sigue sin escribir `animated-wallpaper.json` despues de instalar, cerrar sesion y volver a entrar.
+
+## Diagnostico adicional 2026-09-30
+
+Sintoma:
+
+- Se selecciono `Gengar Animated` desde el selector.
+- El tema y wallpaper estatico cambiaron correctamente.
+- `~/.config/theme-profiles/animated-wallpaper.json` siguio en `enabled: false`.
+- El backend no lanzo VLC porque no recibio estado nuevo.
+
+Verificacion:
+
+- El archivo instalado `~/.local/share/gnome-shell/extensions/theme-profiles@guillenec.dev/metadata.json` tenia `version: 2`.
+- `gnome-extensions info theme-profiles@guillenec.dev` seguia mostrando `Version: 1`.
+- Esto confirma que GNOME Shell seguia usando metadata/codigo cacheado en memoria.
+
+Prueba manual con Gengar:
+
+- Se escribio manualmente `animated-wallpaper.json` con `Gengar-Pokemon-4K.mp4`.
+- El backend lanzo VLC correctamente.
+- Luego se escribio `enabled: false` y VLC se detuvo.
+
+Conclusion:
+
+- El backend funciona.
+- El problema actual es recarga de la extension en GNOME Shell Wayland.
+- Para probar el selector con el fix real, cerrar sesion y volver a entrar.
 
 ## Como seguir
 
 Siguiente paso inmediato:
 
-1. Probar desde el selector un perfil animado despues del fix `Main.notify`.
-2. Confirmar que se crea `~/.config/theme-profiles/animated-wallpaper.json`.
-3. Confirmar que el backend lanza VLC.
-4. Confirmar si VLC se ve como ventana normal o si sirve provisoriamente.
+1. Cerrar sesion y volver a entrar para forzar que GNOME Shell cargue la extension instalada actual.
+2. Probar desde el selector un perfil animado despues del fix `Main.notify`.
+3. Confirmar que se crea `~/.config/theme-profiles/animated-wallpaper.json`.
+4. Confirmar que el backend lanza VLC.
+5. Confirmar si VLC se ve como ventana normal o si sirve provisoriamente.
 
 Despues:
 

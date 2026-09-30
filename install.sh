@@ -38,4 +38,5 @@ fi
 
 printf 'Instalado en %s\n' "$TARGET_DIR"
 printf 'Backend animado instalado en %s\n' "$DAEMON_TARGET_DIR"
-printf 'Si no ves cambios, cierra sesion y vuelve a entrar.\n'
+printf 'Si GNOME sigue usando una version anterior, cierra sesion y vuelve a entrar.\n'
+printf 'En Wayland, disable/enable no siempre recarga el codigo de la extension en memoria.\n'
