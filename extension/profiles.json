@@ -1,0 +1,202 @@
+[
+  {
+    "id": "dracula-contrast",
+    "name": "Dracula Contrast",
+    "gtkTheme": "Dracula",
+    "shellTheme": "Dracula",
+    "iconTheme": "Tela-dracula-dark",
+    "cursorTheme": "Bibata-Modern-Classic",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/Goku%20junto%20al%20lago%20nocturno%20Dracula.png",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "andromeda-neon",
+    "name": "Andromeda Neon",
+    "gtkTheme": "Andromeda",
+    "shellTheme": "Andromeda",
+    "iconTheme": "candy-icons",
+    "cursorTheme": "Bibata-Modern-Classic",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/Goku%20en%20la%20ciudad%20destruida%20ciberpunk.png",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "capsule-night",
+    "name": "Capsule Night",
+    "gtkTheme": "Yaru-purple-dark",
+    "shellTheme": "Yaru-purple-dark",
+    "iconTheme": "Zafiro-Icons-Dark",
+    "cursorTheme": "Bibata-Modern-Ice",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/vegueta_night_capsule.png",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "dracula-neon-pulse",
+    "name": "Dracula Neon Pulse",
+    "gtkTheme": "Dracula-pink-accent",
+    "shellTheme": "Dracula-pink-accent",
+    "iconTheme": "Tela-dracula-dark",
+    "cursorTheme": "Dracula-cursors",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/atardecer_neon_purpura.jpg",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "tokyo-storm-city",
+    "name": "Tokyo Storm City",
+    "gtkTheme": "Tokyonight-B-LB-Dark-Storm",
+    "shellTheme": "Tokyonight-B-LB-Dark-Storm",
+    "iconTheme": "Nordzy-cyan-dark",
+    "cursorTheme": "Future-cursors",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/NightCity_Cyberpunk_NeonCianRojo.jpg",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "capsule-rain-neon",
+    "name": "Capsule Rain Neon",
+    "gtkTheme": "Andromeda-standard-buttons",
+    "shellTheme": "Andromeda-standard-buttons",
+    "iconTheme": "Zafiro-Icons-Dark-Blue-f",
+    "cursorTheme": "Bibata-Modern-Ice",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/RutaCapsuleCorp_DigitalArt_CelesteOcre.jpeg",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "namek-emerald",
+    "name": "Namek Emerald",
+    "gtkTheme": "Orchis-Green-Dark",
+    "shellTheme": "Orchis-Green-Dark",
+    "iconTheme": "Papirus-Dark",
+    "cursorTheme": "material_dark_cursors",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/Piccolo_PazEnNamek_AnimeRealista_CianVioleta_EsmeraldaMarfil.png",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "nordic-moon",
+    "name": "Nordic Moon",
+    "gtkTheme": "Nordic-darker",
+    "shellTheme": "Nordic-darker",
+    "iconTheme": "Nordzy-dark",
+    "cursorTheme": "Bibata-Modern-Ice",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/goku_MeditacionBajoLaLuna_ConceptArt_CobaltoAmbar.png",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "sweet-underground",
+    "name": "Sweet Underground",
+    "gtkTheme": "Sweet-Dark",
+    "shellTheme": "Sweet-Dark",
+    "iconTheme": "Flatery-Black-Dark",
+    "cursorTheme": "Sweet-cursors",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/BarSubterraneo_Cyberpunk_NeonMagentaAzul.jpg",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "cyber-alley-violet",
+    "name": "Cyber Alley Violet",
+    "gtkTheme": "Andromeda-standard-buttons",
+    "shellTheme": "Andromeda-standard-buttons",
+    "iconTheme": "Tela-purple-dark",
+    "cursorTheme": "Future-cursors",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/CallejonNeon_Cyberpunk_PurpuraCian.png",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "goku-city-peace",
+    "name": "Goku City Peace",
+    "gtkTheme": "Tokyonight-BL-MB-Light-Storm",
+    "shellTheme": "Tokyonight-BL-MB-Light-Storm",
+    "iconTheme": "Papirus-Dark",
+    "cursorTheme": "Bibata-Modern-Ice",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/goku_PazEnLaCiudad_AnimeRealista_CianDorado.png",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "cell-capsule-siege",
+    "name": "Cell Capsule Siege",
+    "gtkTheme": "Dracula-standard-buttons",
+    "shellTheme": "Dracula-standard-buttons",
+    "iconTheme": "Tela-dracula-dark",
+    "cursorTheme": "Dracula-cursors",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/cell_AsedioEnCapsuleCorp_AnimeDark_AzulNocheNaranja.png",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "crepusculo-carmesi-neon",
+    "name": "Crepusculo Carmesi Neon",
+    "gtkTheme": "Sweet-mars",
+    "shellTheme": "Sweet-mars",
+    "iconTheme": "Sweet-Mars",
+    "cursorTheme": "material_dark_cursors",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/CrepusculoC%C3%B3smico_Anime_Carmes%C3%ADNeon.jpg",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "crimson-bokeh-night",
+    "name": "Crimson Bokeh Night",
+    "gtkTheme": "Dracula-pink-accent-slim",
+    "shellTheme": "Dracula-pink-accent-slim",
+    "iconTheme": "Tela-purple-dark",
+    "cursorTheme": "Sweet-cursors",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/CrepusculoC%C3%B3smico_Anime_Carmes%C3%ADNeon.jpg",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "alpine-reflection",
+    "name": "Alpine Reflection",
+    "gtkTheme": "Nordic-Polar",
+    "shellTheme": "Nordic-Polar",
+    "iconTheme": "Papirus-Dark",
+    "cursorTheme": "Bibata-Modern-Ice",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/BraiesAlba_Paisajismo_EsmeraldaGris.jpg",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "hedgehog-soft-day",
+    "name": "Hedgehog Soft Day",
+    "gtkTheme": "Yaru-Amber",
+    "shellTheme": "Yaru-Amber",
+    "iconTheme": "Flatery-Yellow",
+    "cursorTheme": "Yaru-Amber",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/ErizoEnElCamino_Fotograf%C3%ADa_CremaCaf%C3%A9.jpg",
+    "colorScheme": "default"
+  },
+  {
+    "id": "kanagawa-sunset-wave",
+    "name": "Kanagawa Sunset Wave",
+    "gtkTheme": "Gruvbox-B-MB-Light",
+    "shellTheme": "Gruvbox-B-MB-Light",
+    "iconTheme": "Tela-nord",
+    "cursorTheme": "Bibata-Modern-Classic",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/OcasoEnKanagawa_UkiyoEModerno_BermejoCian_Naranja%C3%8Dndigo.jpeg",
+    "colorScheme": "default"
+  },
+  {
+    "id": "goku-dragon-orb",
+    "name": "Goku Dragon Orb",
+    "gtkTheme": "Yaru-Orange-dark",
+    "shellTheme": "Yaru-Orange-dark",
+    "iconTheme": "Zafiro-Icons-Dark-Blue-f",
+    "cursorTheme": "Yaru-Orange",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/goku_ReflejoDelGuerrero_ConceptArt_%C3%81mbarOliva.png",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "autumn-poly-dog",
+    "name": "Autumn Poly Dog",
+    "gtkTheme": "Gruvbox-B-MB-Dark",
+    "shellTheme": "Gruvbox-B-MB-Dark",
+    "iconTheme": "Flatery-Orange-Dark",
+    "cursorTheme": "volantes_cursors",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/Oto%C3%B1oPoligonal_LowPoly_Naranja%C3%81mbar.png",
+    "colorScheme": "prefer-dark"
+  },
+  {
+    "id": "golden-cloud-horizon",
+    "name": "Golden Cloud Horizon",
+    "gtkTheme": "Tokyonight-B-LB-Dark-Storm",
+    "shellTheme": "Tokyonight-B-LB-Dark-Storm",
+    "iconTheme": "Nordzy-yellow-dark",
+    "cursorTheme": "Bibata-Modern-Ice",
+    "wallpaperUri": "file:///home/guillenec/.local/share/backgrounds/RutaAlCrep%C3%BAsculo_Ilustraci%C3%B3n_Dorado%C3%8Dndigo.png",
+    "colorScheme": "prefer-dark"
+  }
+]
