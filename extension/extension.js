@@ -420,7 +420,7 @@ export default class ThemeProfilesExtension extends Extension {
         this._writeAnimatedWallpaperState(profile);
 
         this._indicator?.refresh();
-        Main.notify(`Tema aplicado: ${profile.name}`);
+        Main.notify('Tema aplicado', profile.name);
     }
 
     _getTerminalStyle(profileId) {
